@@ -18,8 +18,8 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.home);
         //kosong
         TabLayout tabLayout = findViewById(R.id.tabBar);
-        @SuppressLint("WrongViewCast") TabItem tabFragmentsatu = findViewById(R.id.Fragsatu);
-        @SuppressLint("WrongViewCast") TabItem tabFragmentdua = findViewById(R.id.Fragdua);
+        @SuppressLint("WrongViewCast") TabItem tabFragmentsatu = findViewById(R.id.Fragment1);
+        @SuppressLint("WrongViewCast") TabItem tabFragmentdua = findViewById(R.id.Fragment2);
 
         final ViewPager viewPager = findViewById(R.id.viewPager);
         PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager(),
