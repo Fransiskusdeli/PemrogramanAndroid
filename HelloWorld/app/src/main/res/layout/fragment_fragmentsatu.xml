@@ -1,16 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/holo_orange_dark"
-    tools:context=".Fragmentsatu">
+    tools:context=".Fragmentsatu"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/Fragsatu"
-        android:layout_width="305dp"
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Isi Dari Fragment Satu"
-        android:textColor="@android:color/background_dark"
-        android:textSize="24sp" />
-</FrameLayout>
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/mulai"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:onClick="scheduleJob"
+            android:text="Mulai" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/berhenti"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:onClick="batalSchedule"
+            android:text="Berhenti"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>
