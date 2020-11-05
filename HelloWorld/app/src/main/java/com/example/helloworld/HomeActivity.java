@@ -22,7 +22,7 @@ import com.google.android.material.tabs.TabLayout;
 public class HomeActivity extends AppCompatActivity {
     private Switch WifiSwi;
     private WifiManager WifiManager;
-    private WifiNotif wifiNotif;
+//    private WifiNotif wifiNotif;
 
 
     @Override
@@ -57,9 +57,9 @@ public class HomeActivity extends AppCompatActivity {
 
             }
         });
-
-        WifiSwi = findViewById(R.id.switchwifi);
-        wifiNotif = new WifiNotif();
+//
+//        WifiSwi = findViewById(R.id.switchwifi);
+//        wifiNotif = new WifiNotif();
 //        WifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
 //        WifiSwi.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 //            @Override
@@ -74,48 +74,48 @@ public class HomeActivity extends AppCompatActivity {
 //                }
 //            }
 //        });
-        inisialisasiBroadcastRec();
+//        inisialisasiBroadcastRec();
 
     }
 
+//
+//        protected void onStart(){
+//        super.onStart();
+//            IntentFilter intentFilter = new IntentFilter(WifiManager.WIFI_STATE_CHANGED_ACTION);
+//            registerReceiver(WifiStateRec, intentFilter);
+//        }
+//
+//        @Override
+//        protected void onStop() {
+//            super.onStop();
+//            unregisterReceiver(WifiStateRec);
+//        }
 
-        protected void onStart(){
-        super.onStart();
-            IntentFilter intentFilter = new IntentFilter(WifiManager.WIFI_STATE_CHANGED_ACTION);
-            registerReceiver(WifiStateRec, intentFilter);
-        }
+//    private BroadcastReceiver WifiStateRec = new BroadcastReceiver() {
+//
+//        @Override
+//
+//            public void onReceive(Context context, Intent intent) {
+//                int extra = intent.getIntExtra(WifiManager.EXTRA_WIFI_STATE, WifiManager.WIFI_STATE_UNKNOWN);
+//
+//                switch (extra){
+//                    case android.net.wifi.WifiManager.WIFI_STATE_ENABLED:
+//                        WifiSwi.setChecked(true);
+//                        WifiSwi.setText("Wifi ON");
+//                        //notif on
+//                        wifiNotif.notifOn("Sudah terkoneksi", context);
+//                        break;
+//                    case android.net.wifi.WifiManager.WIFI_STATE_DISABLED:
+//                        WifiSwi.setChecked(false);
+//                        WifiSwi.setText("Wifi OFF");
+//                        //notif off
+//                        wifiNotif.notifOn("Tidak terkoneksi", context);
+//                        break;
+//                }
+//
 
-        @Override
-        protected void onStop() {
-            super.onStop();
-            unregisterReceiver(WifiStateRec);
-        }
-
-    private BroadcastReceiver WifiStateRec = new BroadcastReceiver() {
-
-        @Override
-
-            public void onReceive(Context context, Intent intent) {
-                int extra = intent.getIntExtra(WifiManager.EXTRA_WIFI_STATE, WifiManager.WIFI_STATE_UNKNOWN);
-
-                switch (extra){
-                    case android.net.wifi.WifiManager.WIFI_STATE_ENABLED:
-                        WifiSwi.setChecked(true);
-                        WifiSwi.setText("Wifi ON");
-                        //notif on
-                        wifiNotif.notifOn("Sudah terkoneksi", context);
-                        break;
-                    case android.net.wifi.WifiManager.WIFI_STATE_DISABLED:
-                        WifiSwi.setChecked(false);
-                        WifiSwi.setText("Wifi OFF");
-                        //notif off
-                        wifiNotif.notifOn("Tidak terkoneksi", context);
-                        break;
-                }
-
-
-            }
-        };
+//            }
+//        };
 
 
     private void inisialisasiBroadcastRec(){

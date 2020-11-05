@@ -6,14 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
-    <Switch
-        android:id="@+id/switchwifi"
-        android:layout_width="109dp"
-        android:layout_height="75dp"
-        android:text="     WIFI"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<!--    <Switch-->
+<!--        android:id="@+id/switchwifi"-->
+<!--        android:layout_width="109dp"-->
+<!--        android:layout_height="75dp"-->
+<!--        android:text="     WIFI"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabBar"
@@ -38,12 +38,13 @@
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
-        android:layout_width="258dp"
-        android:layout_height="678dp"
+        android:layout_width="412dp"
+        android:layout_height="675dp"
 
 
-        android:layout_marginTop="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/switchwifi"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tabBar"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp" />
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
