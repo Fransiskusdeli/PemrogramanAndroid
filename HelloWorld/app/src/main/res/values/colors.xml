@@ -4,4 +4,10 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="colorWhite">#FFFFFF</color>
+    <color name="colorGreen">#25FD03</color>
+    <color name="colorPurple">#2D0073</color>
+    <color name="purplemuda">#6504FC</color>
+    <color name="kuning">#FA8F05</color>
+    <color name="merah">#FA1405</color>
+    <color name="orange">#FA7105</color>
 </resources>
