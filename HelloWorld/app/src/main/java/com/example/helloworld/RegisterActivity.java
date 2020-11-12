@@ -54,7 +54,11 @@ public class RegisterActivity extends AppCompatActivity {
                     values.put(DatabaseHelper.row_username, username);
                     values.put(DatabaseHelper.row_password, password);
                     dbHelper.insertData(values);
+                    //SeSSION
 
+
+
+                    //SESSION
                     Toast.makeText(RegisterActivity.this, "Berhasil Register!", Toast.LENGTH_SHORT).show();
                     finish();
                 }

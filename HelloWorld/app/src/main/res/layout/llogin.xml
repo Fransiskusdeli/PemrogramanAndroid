@@ -7,7 +7,7 @@
     android:background="@color/kuning"
     android:gravity="center_vertical"
     tools:ignore="MissingDefaultResource">
-    
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="79dp"
@@ -15,7 +15,6 @@
             android:gravity="center_horizontal"
             android:text="WELCOME!"
             android:textColor="#000000"
-
             android:textSize="50dp"
             android:textStyle="bold" />
 
@@ -85,15 +84,16 @@
 
             android:background="@color/colorWhite"/>
     </LinearLayout>
+
     <Button
         android:id="@+id/btnloginLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
         android:layout_marginTop="20dp"
         android:background="@color/colorWhite"
-        android:text="Login"/>
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="Login" />
 
 
     <LinearLayout

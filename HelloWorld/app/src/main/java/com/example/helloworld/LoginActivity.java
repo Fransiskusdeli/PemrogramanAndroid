@@ -1,12 +1,9 @@
 package com.example.helloworld;
 
 import androidx.appcompat.app.AppCompatActivity;
-import android.database.Cursor;
+
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.text.Html;
-import android.text.Spanned;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,7 +17,12 @@ public class LoginActivity extends AppCompatActivity {
     private EditText txtPassword;
     private Button btnlogin;
     private Button btnRegister;
+
     DatabaseHelper dbHelper;
+
+
+    SharedPrefManager sharedPrefManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +32,24 @@ public class LoginActivity extends AppCompatActivity {
         txtPassword = findViewById(R.id.passwordLogin);
         btnRegister = findViewById(R.id.btnRegisterLogin);
         btnlogin = findViewById(R.id.btnloginLogin);
+
         dbHelper = new DatabaseHelper(this);
 //        TextView tvCreateAccount = (TextView)findViewById(R.id.tvCreateAccount);
+        sharedPrefManager = new SharedPrefManager(this);
+
+        if (sharedPrefManager.getSPSudahLogin()){
+            startActivity(new Intent(LoginActivity.this, HomeActivity.class)
+                    .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
+            finish();
+        }
+
+//        Button btnLogout;
+
+
+
+
+
+
 
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,7 +68,11 @@ public class LoginActivity extends AppCompatActivity {
                 String passwordvalue = txtPassword.getText().toString();
                 Boolean res = dbHelper.checkUser(usernamevalue,passwordvalue);
                 if(res == true){
+                    sharedPrefManager.saveSPBoolean(SharedPrefManager.SP_SUDAH_LOGIN, true);
                     Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                    //SEESSION
+
+                    //SESSION
                     startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                 }else {
                     Toast.makeText(LoginActivity.this, "Gagal", Toast.LENGTH_SHORT).show();
@@ -65,6 +87,10 @@ public class LoginActivity extends AppCompatActivity {
                  startActivity(intent);
             }
         });
+
+
+
+
     }
 }
 
