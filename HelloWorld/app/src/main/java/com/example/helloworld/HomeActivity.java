@@ -12,16 +12,23 @@ import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
+import android.widget.Toast;
 
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 
 
 public class HomeActivity extends AppCompatActivity {
+
     private Switch WifiSwi;
     private WifiManager WifiManager;
+    boolean session;
+    private Button btnLogoutt;
+    SharedPrefManager sharedPrefManager;
 //    private WifiNotif wifiNotif;
 
 
@@ -29,6 +36,21 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
+
+        btnLogoutt = findViewById(R.id.btnlogout_home);
+
+        //UNUTK LOGOUT DGN KLIK TOMBOLNYA
+        sharedPrefManager = new SharedPrefManager(this);
+        btnLogoutt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sharedPrefManager.saveSPBoolean(SharedPrefManager.SP_SUDAH_LOGIN, false);
+                startActivity(new Intent(HomeActivity.this, LoginActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
+                finish();
+            }
+        });
+
+
         //kosong
         TabLayout tabLayout = findViewById(R.id.tabBar);
         @SuppressLint("WrongViewCast") TabItem tabFragmentsatu = findViewById(R.id.Fragment1);
@@ -40,6 +62,18 @@ public class HomeActivity extends AppCompatActivity {
 
 
         viewPager.setAdapter(pagerAdapter);
+
+
+        //LOGOUT
+
+//        findViewById(R.id.btnlogout_home).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
+        //LOGOUT
+
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -56,6 +90,10 @@ public class HomeActivity extends AppCompatActivity {
             public void onTabReselected(TabLayout.Tab tab) {
 
             }
+
+
+
+
         });
 //
 //        WifiSwi = findViewById(R.id.switchwifi);
@@ -118,6 +156,8 @@ public class HomeActivity extends AppCompatActivity {
 //        };
 
 
+
+
     private void inisialisasiBroadcastRec(){
         WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
         WifiSwi.setOnCheckedChangeListener((buttonView, isChecked) -> {
@@ -140,4 +180,24 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
     }
+
+
+    //SESSION MANAGER
+//    public void SESSION(){
+//        session = Boolean.valueOf(Save.read(getApplicationContext(), "session", "false"));
+//            if(session){
+//                //firs login
+////                Intent homee = new Intent(getApplicationContext(), HomeActivity.class);
+////                startActivity(homee);
+////                finish();
+//            }else {
+//                //sudah login
+//                //value true
+//
+//
+//                Toast.makeText(this, "Anda sudah Login sebelumnya!", Toast.LENGTH_SHORT).show();
+//            }
+//
+//        }
+
 }
