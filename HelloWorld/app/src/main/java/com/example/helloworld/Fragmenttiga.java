@@ -43,7 +43,7 @@ public class Fragmenttiga extends Fragment {
     private EditText phoneMhs;
     private Button buttonSimpan;
     private Button buttonhps;
-
+    private Button buttonupdate;
 
 
 
@@ -98,7 +98,7 @@ public class Fragmenttiga extends Fragment {
         phoneMhs = view.findViewById(R.id.phoneMhs);
         buttonSimpan = view.findViewById(R.id.simpanButton);
         buttonhps = view.findViewById(R.id.hapusButton);
-
+        buttonupdate = view.findViewById(R.id.gantiButton);
         firebaseFirestoreDb = FirebaseFirestore.getInstance();
 
 
@@ -123,6 +123,12 @@ public class Fragmenttiga extends Fragment {
             }
         });
 
+
+        buttonupdate.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                updateDataMahasiswa();
+            }
+        });
 
 
 
@@ -215,7 +221,25 @@ public class Fragmenttiga extends Fragment {
     }
 
     private void updateDataMahasiswa(){
-
+//        firebaseFirestoreDb.collection("DaftarMhs").document(namaMhs.getText().toString())
+//                .update("nama",namaMhs.getNama(),"nim",noMhs.getNim(),"phone",phoneMhs.getPhone())
+//                .addOnSuccessListener(new OnSuccessListener<Void>() {
+//                    @Override
+//                    public void onSuccess(Void aVoid) {
+//                        noMhs.setText("");
+//                        namaMhs.setText("");
+//                        phoneMhs.setText("");
+//                        Toast.makeText(requireActivity(), "Mahasiswa berhasil diupdate",
+//                                Toast.LENGTH_SHORT).show();
+//                    }
+//                })
+//                .addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception e) {
+//                        Toast.makeText(requireActivity(), "Error updating document: " + e.getMessage(),
+//                                Toast.LENGTH_SHORT).show();
+//                    }
+//                });
     }
 
 
