@@ -20,6 +20,8 @@ private int numOfTabs;
         switch (position){
             case 0 : return new Fragmentsatu();
             case 1 : return new Fragmentdua();
+            case 2 : return new Fragmenttiga();
+            case 3 : return new Fragmentempat();
             default: return null;
         }
 
