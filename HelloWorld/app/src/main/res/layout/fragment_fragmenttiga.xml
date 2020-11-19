@@ -51,10 +51,21 @@
         android:text="Simpan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/gantiButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ganti" />
+
+
     <Button
         android:id="@+id/hapusButton"
         android:text="Hapus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
+
+
 
 </LinearLayout>

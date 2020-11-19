@@ -42,8 +42,8 @@ public class Fragmenttiga extends Fragment {
     private EditText namaMhs;
     private EditText phoneMhs;
     private Button buttonSimpan;
-    private Button buttonHapus;
-
+    private Button buttonhps;
+    private Button buttonupdate;
 
 
 
@@ -97,8 +97,8 @@ public class Fragmenttiga extends Fragment {
         namaMhs = view.findViewById(R.id.namaMhs);
         phoneMhs = view.findViewById(R.id.phoneMhs);
         buttonSimpan = view.findViewById(R.id.simpanButton);
-        buttonHapus = view.findViewById(R.id.hapusButton);
-
+        buttonhps = view.findViewById(R.id.hapusButton);
+        buttonupdate = view.findViewById(R.id.gantiButton);
         firebaseFirestoreDb = FirebaseFirestore.getInstance();
 
 
@@ -116,11 +116,58 @@ public class Fragmenttiga extends Fragment {
                 }
             }
         });
+
+        buttonhps.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                deleteDataMahasiswa();
+            }
+        });
+
+
+        buttonupdate.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                updateDataMahasiswa();
+            }
+        });
+
+
+
         return view;
+
+
+
 
     }
 
     //utk nyimpen
+
+
+
+    private void getDataMahasiswa() {
+        DocumentReference docRef = firebaseFirestoreDb.collection("DaftarMhs").document("mhs1");
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        DataMahasiswa mhs = document.toObject(DataMahasiswa.class);
+                        noMhs.setText(mhs.getNim());
+                        namaMhs.setText(mhs.getNama());
+                        phoneMhs.setText(mhs.getPhone());
+                    } else {
+                        Toast.makeText(requireActivity(), "Document tidak ditemukan",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(requireActivity(), "Document error : " + task.getException(),
+                            Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
+
 
 
 
@@ -130,7 +177,7 @@ public class Fragmenttiga extends Fragment {
                 namaMhs.getText().toString(),
                 phoneMhs.getText().toString());
 
-        firebaseFirestoreDb.collection("DaftarMhs").document().set(mhs)
+        firebaseFirestoreDb.collection("DaftarMhs").document(namaMhs.getText().toString()).set(mhs)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
@@ -147,6 +194,8 @@ public class Fragmenttiga extends Fragment {
                     }
                 });
     }
+
+
 
 
     private void deleteDataMahasiswa() {
@@ -171,14 +220,29 @@ public class Fragmenttiga extends Fragment {
                 });
     }
 
+    private void updateDataMahasiswa(){
+//        firebaseFirestoreDb.collection("DaftarMhs").document(namaMhs.getText().toString())
+//                .update("nama",namaMhs.getNama(),"nim",noMhs.getNim(),"phone",phoneMhs.getPhone())
+//                .addOnSuccessListener(new OnSuccessListener<Void>() {
+//                    @Override
+//                    public void onSuccess(Void aVoid) {
+//                        noMhs.setText("");
+//                        namaMhs.setText("");
+//                        phoneMhs.setText("");
+//                        Toast.makeText(requireActivity(), "Mahasiswa berhasil diupdate",
+//                                Toast.LENGTH_SHORT).show();
+//                    }
+//                })
+//                .addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception e) {
+//                        Toast.makeText(requireActivity(), "Error updating document: " + e.getMessage(),
+//                                Toast.LENGTH_SHORT).show();
+//                    }
+//                });
+    }
 
 
-
-//    buttonHapus.setOnClickListener(new View.OnClickListener() {
-//        public void onClick(View v) {
-//            deleteDataMahasiswa();
-//        }
-//    });
 
 
 

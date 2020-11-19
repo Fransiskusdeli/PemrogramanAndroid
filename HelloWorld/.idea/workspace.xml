@@ -10,14 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="26ed79ea-d027-45b0-a4ab-41ee083ee2b9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/detaildatamahasiswa.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/helloworld/Fragmenttiga.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/helloworld/Fragmenttiga.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/home.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/uiinputmah.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/uiinputmah.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_fragmenttiga.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_fragmenttiga.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -265,7 +263,21 @@
       <option name="project" value="LOCAL" />
       <updated>1605787584831</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Master commit (T8)">
+      <created>1605797715252</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1605797715252</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Master commit (T8)">
+      <created>1605800408803</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1605800408803</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -314,10 +326,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="263" y="73" key="AndroidThemeDialog/0.0.1366.738@0.0.1366.738" timestamp="1604926411523" />
-    <state x="124" y="0" key="CommitChangelistDialog2" timestamp="1605787577017">
+    <state x="124" y="0" key="CommitChangelistDialog2" timestamp="1605800406492">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="124" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1605787577017" />
+    <state x="124" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1605800406492" />
     <state x="462" y="110" key="FileChooserDialogImpl" timestamp="1605782073388">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -370,10 +382,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="475" y="273" key="SetupCloudRepositoryDialog/0.0.1366.738@0.0.1366.738" timestamp="1604858519636" />
-    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1605787604994">
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1605800418771">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1605787604994" />
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1605800418771" />
     <state x="499" y="146" key="chooseDestDirectoryDialog" timestamp="1604927015002">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
